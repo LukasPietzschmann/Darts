@@ -1,8 +1,10 @@
 package ui.view
 
 import tornadofx.View
-import tornadofx.label
+import tornadofx.borderpane
 
 class MainView : View(title = "Darts") {
-	override val root = label("Hello World")
+	override val root = borderpane {
+		left<PlayerListView>()
+	}
 }
