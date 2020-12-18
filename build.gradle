@@ -1,6 +1,6 @@
 plugins {
 	id 'org.jetbrains.kotlin.jvm' version '1.4.10'
-	id 'org.openjfx.javafxplugin' version '0.0.9'
+	//id 'org.openjfx.javafxplugin' version '0.0.9'
 	id 'application'
 }
 
@@ -16,10 +16,10 @@ dependencies {
 	implementation 'no.tornado:tornadofx:1.7.20'
 }
 
-javafx {
+/*javafx {
 	version = "11.0.2"
 	modules = ['javafx.controls', 'javafx.graphics']
-}
+}*/
 
 compileKotlin {
 	kotlinOptions.jvmTarget = '1.8'
