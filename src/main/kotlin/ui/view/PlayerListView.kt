@@ -28,6 +28,12 @@ class PlayerListView : View() {
 						}
 					}
 					label("${it.score} Punkte")
+
+					contextmenu {
+						item("Delete Player").action {
+							selectedItem?.let { store.removePlayer(it) }
+						}
+					}
 				}
 			}
 
