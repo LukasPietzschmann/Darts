@@ -17,7 +17,7 @@ class PlayerListView : View() {
 			alignment = Pos.CENTER
 		}
 
-		label("Spieler")
+		label("Players")
 
 		listview(store.players) {
 			cellFormat {
@@ -27,7 +27,7 @@ class PlayerListView : View() {
 							fontWeight = FontWeight.BOLD
 						}
 					}
-					label("${it.score} Punkte")
+					label("${it.score} Points")
 
 					contextmenu {
 						item("Delete Player").action {
@@ -47,7 +47,7 @@ class PlayerListView : View() {
 		}
 
 		textfield {
-			promptText = "Neuer Spieler..."
+			promptText = "New Player..."
 
 			addEventFilter(KeyEvent.KEY_PRESSED) {
 				if (it.code == KeyCode.ENTER && text != "") {
