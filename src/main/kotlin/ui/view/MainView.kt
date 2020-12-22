@@ -6,5 +6,6 @@ import tornadofx.borderpane
 class MainView : View(title = "Darts") {
 	override val root = borderpane {
 		left<PlayerListView>()
+		center<StartView>()
 	}
 }

@@ -1,0 +1,2 @@
+object NoCurrentMatchupException : Exception("There is no current Matchup. You might have setup less than two Players")
+object NoSelectedGameModeException : java.lang.Exception("No Game Mode was selected!")
