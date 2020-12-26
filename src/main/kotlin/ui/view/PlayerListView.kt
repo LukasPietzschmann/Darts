@@ -7,10 +7,17 @@ import javafx.scene.input.KeyEvent
 import javafx.scene.layout.Priority
 import javafx.scene.text.FontWeight
 import tornadofx.*
+import ui.controller.Logic
 import ui.controller.Store
+import ui.controller.listener.GameStartListener
 
-class PlayerListView : View() {
-	private val store: Store = find(Store::class)
+class PlayerListView : View(), GameStartListener {
+	private val store = find(Store::class)
+	private val logic = find(Logic::class)
+
+	init {
+		logic.registerGameStartListener(this)
+	}
 
 	override val root = vbox {
 		vboxConstraints {
@@ -47,6 +54,7 @@ class PlayerListView : View() {
 		}
 
 		textfield {
+			id = "Player_Input"
 			promptText = "New Player..."
 
 			addEventFilter(KeyEvent.KEY_PRESSED) {
@@ -55,6 +63,12 @@ class PlayerListView : View() {
 					text = ""
 				}
 			}
+		}
+	}
+
+	override fun onGameStart() {
+		root.apply {
+			children.forEach { if (it.id == "Player_Input") it.isDisable = true }
 		}
 	}
 }
